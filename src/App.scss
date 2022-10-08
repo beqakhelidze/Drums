@@ -1,0 +1,115 @@
+$WindowBarColor : 	#0047AB;
+$WindowTextColor : 	#6495ED;
+$BackgroundColor :#B3C0FF;
+$Orange : rgb(255, 145, 0);
+
+.App {
+    text-align: center;
+    padding:20px;
+}
+
+#root{
+    height:100vh;
+    width:100%;
+    display:grid;
+    justify-content: center;
+    align-items: center;
+}
+  
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+body{
+    background-color: $BackgroundColor;
+    height:100%;
+}
+
+#drum-machine {
+    background-color: $WindowTextColor;
+    border-radius: 5px;
+    width:60vw;
+    display:flex;
+    div{
+        width:50%;
+    }
+    #DrumSounds{
+        padding:20px;
+        display:grid;
+        gap:15px;
+        grid-template-columns: auto auto auto;
+        button{
+            width:100px;
+            height:100px;
+            border-radius: 5px;
+            border:1px solid black;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            outline: none;
+        }
+        button:active{
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          background-color:$Orange;
+        }
+    }
+
+    .Controller{
+        display: grid;
+        justify-items: center;
+        padding:50px;
+        .SelectDiv{
+            width:70px;
+            text-align: center;
+        }
+        .Select{
+            width:100%;
+            background-color: black;
+            height:20px;
+            padding:2px;
+            .Rectangle{
+                width:50%;
+                background-color: $WindowBarColor;
+                height:100%;
+            }
+        }
+        input[type=range]{
+            width:70%;
+        }
+        #actions{
+            width:200px;
+            height:40px;
+            background-color: white;
+            display: grid;
+            place-items: center;
+            color:orange;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    }
+}
+
+@media only screen and (max-width: 1030px) {
+    #drum-machine {
+        background-color: $WindowTextColor;
+        border-radius: 5px;
+        width:60vw;
+        display:flex;
+        flex-direction: column;
+        div{
+            width:100%;
+            justify-content: center;
+        }
+        .Controller{
+            gap:25px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #drum-machine {
+        width:98vw;
+    }
+}
